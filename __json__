@@ -1,0 +1,43 @@
+{
+    "app.py": {
+        "description": "Main entry point for the Flask application. Sets up the Flask server, defines routes, and starts the server.",
+        "dependencies": {
+            "templates/index.html": [
+                "index_html"
+            ],
+            "requirements.txt": [
+                "flask"
+            ]
+        },
+        "exposes": [
+            "app"
+        ]
+    },
+    "templates/index.html": {
+        "description": "Simple HTML page displaying 'Hello World'.",
+        "exposes": [
+            "index_html"
+        ]
+    },
+    "requirements.txt": {
+        "description": "List of dependencies required for the project.",
+        "exposes": [
+            "flask",
+            "jinja2"
+        ]
+    },
+    "run.sh": {
+        "description": "Bash run script, should: install Python, install Flask and Jinja2, run the Flask application.",
+        "dependencies": {
+            "app.py": [
+                "app"
+            ]
+        }
+    },
+    ".gitignore": {
+        "description": ".gitignore with __pycache__ and virtual environment files"
+    },
+    "README.md": {
+        "description": "README with basic documentation and 'how to run' guide"
+    }
+}
